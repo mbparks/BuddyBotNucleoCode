@@ -14,8 +14,8 @@
 //PA_9:  Bluetooth Serial TX   / D8
 //PA_10: Bluetooth Serial RX   / D2
 //
-//PB_3:  Left Kill Switch   / D3
-//PB_4:  Right Kill Switch  / D5   
+//PB_3:  Left Limit Switch   / D3
+//PB_4:  Right Limit Switch  / D5   
 //
 //PB_6 /D10:  hMotor Coil 1A + to 293-2   |   1Y+   O B/W    293-3
 //PA_7 /D11:  hMotor Coil 2A + to 293-15  |   2Y+   R Y/W    293-14
@@ -57,8 +57,8 @@ Timer timer;
 
 Ping catSensor(PA_6);    // Ping Ultrasonic sensor
 
-InterruptIn leftKillSwitch(PB_3);    //Interrupt when motor drives too far left
-InterruptIn rightKillSwitch(PC_7);   //Interrupt when motor drive too far right
+InterruptIn leftLimitSwitch(PB_3);    //Interrupt when motor drives too far left
+InterruptIn rightLimitSwitch(PC_7);   //Interrupt when motor drive too far right
 
 //Declare variables
 bool autoModeOnFlag = false;    //Track if system is in automatic robot mode  
@@ -209,12 +209,12 @@ void autoMode_Main() {
 int main() {
     
     //Intialize the interrupts
-    leftKillSwitch.rise(&handleLeftInterrupt);
-    rightKillSwitch.rise(&handleRightInterrupt);
+    leftLimitSwitch.rise(&handleLeftInterrupt);
+    rightLimitSwitch.rise(&handleRightInterrupt);
     
     //Put interrupt pins into PullDown mode
-    leftKillSwitch.mode(PullDown);
-    rightKillSwitch.mode(PullDown);
+    leftLimitSwitch.mode(PullDown);
+    rightLimitSwitch.mode(PullDown);
     
     //Set Bluetooth communication baud rate to 115200
     bt.baud(115200);
