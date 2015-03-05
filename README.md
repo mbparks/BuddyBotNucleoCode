@@ -4,4 +4,4 @@ All software, source code, pseudocode and other documentation, drawings and anyt
 
 All hardware, design files, 3D printing related files, schematics, PCB board files and anything else hardware-related is released under CERN OHL v. 1.2.  You may redistribute and modify this documentation under the terms of the CERN OHL v.1.2. (http://ohwr.org/cernohl). This documentation is distributed WITHOUT ANY EXPRESS OR IMPLIED WARRANTY, INCLUDING OF MERCHANTABILITY, SATISFACTORY QUALITY AND FITNESS FOR A PARTICULAR PURPOSE. Please see the CERN OHL v.1.2 for applicable conditions.
 
-We are not liable for anything regarding your use of the provided files.
+We disclaim all liability for damages resulting from the use of the provided files.
